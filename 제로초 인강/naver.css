@@ -11,6 +11,8 @@ body {
 
 #header-top {
   float: right;
+  margin-top: 11px;
+  height: 21px;
 }
 #header-top span {
   font-size: 11px;
@@ -30,11 +32,14 @@ body {
   margin: 0 auto;
   width: 1080px;
 }
+#header-search {
+  clear: both;
+  padding-top: 20px;
+}
 
 #header-search > a {
   text-decoration: none;
   vertical-align: middle;
-  clear: both;
 }
 
 div#header-search h1 {
@@ -57,7 +62,7 @@ div#header-search h1 {
 }
 
 #header-search fieldset {
-  margin-left: 20px;
+  margin-left: 18px;
   /* padding-left: 10px;
   padding-top: 12px;
   padding-bottom: 12px;
@@ -90,10 +95,15 @@ div#header-search h1 {
   right: -2px;
   top: -2px;
 }
+nav {
+  height: 46px;
+  border-top: 1px solid #f1f3f6;
+  border-bottom: 1px solid #d1d8e4;
+}
 
 nav ul {
   margin: 0;
-  padding: 0;
+  padding: 16px 0 16px 0;
   list-style: none;
 }
 nav li span {
@@ -102,8 +112,18 @@ nav li span {
   font-size: 15px;
   line-height: 30px;
   font-weight: 700;
-  color: #000;
+  color: #03cf5d;
   letter-spacing: -0.3px;
   display: inline-block;
   height: 16px;
+}
+#search-ranking {
+  position: absolute;
+  top: 183px;
+  right: 100px;
+}
+#rank-number {
+  margin-top: -9px;
+  color: #00ab33;
+  font-size: 16px;
 }
