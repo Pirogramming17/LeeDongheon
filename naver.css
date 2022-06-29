@@ -1,6 +1,20 @@
 /*선택자(selctor) div는 div 적는거 생략도 가능 */
+/*위쪽 태그에 적용된 속성은 아래 태그에도 다 덮어씌워짐*/
 
 div#header-center {
   margin: 0 auto;
   width: 1080px;
+}
+
+div#header-search > h1 {
+  width: 280px;
+  display: inline-block;
+}
+/*#header-center h1 {} 자손 선택 */
+#header-search h2 {
+  display: none;
+}
+#header-search fieldset {
+  width: 520px;
+  display: inline-block;
 }
