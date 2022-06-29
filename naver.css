@@ -1,5 +1,13 @@
 /*선택자(selctor) div는 div 적는거 생략도 가능 */
 /*위쪽 태그에 적용된 속성은 아래 태그에도 다 덮어씌워짐*/
+.blind {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+}
 
 div#header-center {
   margin: 0 auto;
