@@ -1,0 +1,6 @@
+/*선택자(selctor) div는 div 적는거 생략도 가능 */
+
+div#header-center {
+  margin: 0 auto;
+  width: 1080px;
+}
