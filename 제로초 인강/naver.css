@@ -150,6 +150,9 @@ main h3:nth-of-type(2) {
   width: 740px;
   height: 120px;
   background: #555;
+  margin-bottom: 8px;
+  margin-right: 8px;
+  float: left;
 }
 
 #main-login {
@@ -158,6 +161,8 @@ main h3:nth-of-type(2) {
   height: 120px;
   vertical-align: top;
   background: white;
+  margin-bottom: 8px;
+  float: left;
 }
 
 #main-ytn {
@@ -165,6 +170,8 @@ main h3:nth-of-type(2) {
   width: 740px;
   height: 46px;
   background: white;
+  margin-bottom: 8px;
+  margin-right: 8px;
 }
 
 #main-newsstand {
@@ -172,18 +179,22 @@ main h3:nth-of-type(2) {
   width: 740px;
   height: 246px;
   background: white;
+  margin-bottom: 8px;
+  margin-right: 8px;
 }
 #main-weather {
   display: inline-block;
   width: 332px;
   height: 142px;
   background: white;
+  margin-bottom: 8px;
 }
 #main-second-ad {
   display: inline-block;
   width: 332px;
   height: 150px;
   background: #555;
+  margin-bottom: 8px;
 }
 #main-category {
   display: inline-block;
