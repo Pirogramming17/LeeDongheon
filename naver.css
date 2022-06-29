@@ -13,16 +13,36 @@ div#header-center {
   margin: 0 auto;
   width: 1080px;
 }
+#header-search > a {
+  text-decoration: none;
+}
 
-div#header-search > h1 {
-  width: 280px;
+div#header-search h1 {
+  width: 222px;
+  height: 52px;
   display: inline-block;
+  /* background-position: 0 -360px;
+  background-image: url(https://s.pstatic.net/static/www/img/uit/sp_main_4f8ccb.png);
+  background-repeat: no-repeat;  */
+  background: url(https://s.pstatic.net/static/www/img/uit/sp_main_4f8ccb.png)
+    0px -360px no-repeat;
 }
 /*#header-center h1 {} 자손 선택 */
+#header-search h1 > span {
+  display: none;
+}
+
 #header-search h2 {
   display: none;
 }
 #header-search fieldset {
-  width: 520px;
+  margin-left: 20px;
+  /* padding-left: 10px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-right: 0; */
+  padding: 12px 0 12px 10px;
+  width: 444px;
+  height: 24px;
   display: inline-block;
 }
