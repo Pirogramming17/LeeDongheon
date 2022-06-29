@@ -1,0 +1,48 @@
+/*선택자(selctor) div는 div 적는거 생략도 가능 */
+/*위쪽 태그에 적용된 속성은 아래 태그에도 다 덮어씌워짐*/
+.blind {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+}
+
+div#header-center {
+  margin: 0 auto;
+  width: 1080px;
+}
+#header-search > a {
+  text-decoration: none;
+}
+
+div#header-search h1 {
+  width: 222px;
+  height: 52px;
+  display: inline-block;
+  /* background-position: 0 -360px;
+  background-image: url(https://s.pstatic.net/static/www/img/uit/sp_main_4f8ccb.png);
+  background-repeat: no-repeat;  */
+  background: url(https://s.pstatic.net/static/www/img/uit/sp_main_4f8ccb.png)
+    0px -360px no-repeat;
+}
+/*#header-center h1 {} 자손 선택 */
+#header-search h1 > span {
+  display: none;
+}
+
+#header-search h2 {
+  display: none;
+}
+#header-search fieldset {
+  margin-left: 20px;
+  /* padding-left: 10px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-right: 0; */
+  padding: 12px 0 12px 10px;
+  width: 444px;
+  height: 24px;
+  display: inline-block;
+}
