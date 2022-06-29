@@ -1,5 +1,9 @@
 /*선택자(selctor) div는 div 적는거 생략도 가능 */
 /*위쪽 태그에 적용된 속성은 아래 태그에도 다 덮어씌워짐*/
+* {
+  box-sizing: border-box;
+}
+
 .blind {
   position: absolute;
   clip: rect(0 0 0 0);
@@ -15,11 +19,12 @@ div#header-center {
 }
 #header-search > a {
   text-decoration: none;
+  vertical-align: middle;
 }
 
 div#header-search h1 {
   width: 222px;
-  height: 52px;
+  height: 43px;
   display: inline-block;
   /* background-position: 0 -360px;
   background-image: url(https://s.pstatic.net/static/www/img/uit/sp_main_4f8ccb.png);
@@ -35,6 +40,7 @@ div#header-search h1 {
 #header-search h2 {
   display: none;
 }
+
 #header-search fieldset {
   margin-left: 20px;
   /* padding-left: 10px;
@@ -43,6 +49,13 @@ div#header-search h1 {
   padding-right: 0; */
   padding: 12px 0 12px 10px;
   width: 444px;
-  height: 24px;
+  height: 49px;
   display: inline-block;
+  border: 2px solid #03cf5d; /* hex*/
+  vertical-align: middle;
+}
+#header-search fieldset input {
+  border: none;
+  padding: 0;
+  vertical-align: middle;
 }
