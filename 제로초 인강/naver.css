@@ -106,6 +106,7 @@ nav ul {
   padding: 16px 0 16px 0;
   list-style: none;
 }
+
 nav li span {
   float: left;
   margin-left: 12px;
@@ -117,6 +118,9 @@ nav li span {
   display: inline-block;
   height: 16px;
 }
+#new-menu {
+  color: #000;
+}
 #search-ranking {
   position: absolute;
   top: 183px;
@@ -126,4 +130,12 @@ nav li span {
   margin-top: -9px;
   color: #00ab33;
   font-size: 16px;
+}
+main {
+  background-color: #f2f4f7;
+  overflow: auto;
+}
+
+main h3:nth-of-type(2) {
+  background: red;
 }
