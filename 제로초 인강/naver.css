@@ -23,14 +23,14 @@ div#header-center {
 }
 
 div#header-search h1 {
-  width: 222px;
-  height: 43px;
+  width: 318px;
+  height: 62px;
   display: inline-block;
   /* background-position: 0 -360px;
   background-image: url(https://s.pstatic.net/static/www/img/uit/sp_main_4f8ccb.png);
   background-repeat: no-repeat;  */
-  background: url(https://s.pstatic.net/static/www/img/uit/sp_main_4f8ccb.png)
-    0px -360px no-repeat;
+  background: url(https://s.pstatic.net/static/www/img/uit/sp_main_4f8ccb.png) -124px -348px
+    no-repeat;
 }
 /*#header-center h1 {} 자손 선택 */
 #header-search h1 > span {
@@ -54,8 +54,18 @@ div#header-search h1 {
   border: 2px solid #03cf5d; /* hex*/
   vertical-align: middle;
 }
-#header-search fieldset input {
+#header-search fieldset > input {
   border: none;
   padding: 0;
   vertical-align: middle;
+}
+#header-search fieldset > button {
+  width: 49px;
+  height: 49px;
+  border: none;
+  padding: 0;
+  background: #03cf5d;
+  background-image: url(https://s.pstatic.net/static/www/img/uit/sp_main_4f8ccb.png);
+  background-position: -837px 2px;
+  background-repeat: no-repeat;
 }
