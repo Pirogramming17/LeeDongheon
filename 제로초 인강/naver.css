@@ -133,9 +133,80 @@ nav li span {
 }
 main {
   background-color: #f2f4f7;
-  overflow: auto;
+  display: inline-block;
+  width: 100%;
 }
 
 main h3:nth-of-type(2) {
   background: red;
+}
+#main-centered {
+  padding: 8px 10px 0;
+  width: 1100px;
+}
+
+#main-ad {
+  display: inline-block;
+  width: 740px;
+  height: 120px;
+  background: #555;
+}
+
+#main-login {
+  display: inline-block;
+  width: 330px;
+  height: 120px;
+  vertical-align: top;
+  background: white;
+}
+
+#main-ytn {
+  display: inline-block;
+  width: 740px;
+  height: 46px;
+  background: white;
+}
+
+#main-newsstand {
+  display: inline-block;
+  width: 740px;
+  height: 246px;
+  background: white;
+}
+#main-weather {
+  display: inline-block;
+  width: 332px;
+  height: 142px;
+  background: white;
+}
+#main-second-ad {
+  display: inline-block;
+  width: 332px;
+  height: 150px;
+  background: #555;
+}
+#main-category {
+  display: inline-block;
+  width: 740px;
+  height: 837px;
+  background: white;
+}
+#main-shopping {
+  display: inline-block;
+  width: 332px;
+  height: 837px;
+  background: white;
+}
+#main-event {
+  display: inline-block;
+  width: 740px;
+  height: 130px;
+  background: white;
+  vertical-align: top;
+}
+#main-third-ad {
+  display: inline-block;
+  width: 332px;
+  height: 130px;
+  background: #555;
 }
