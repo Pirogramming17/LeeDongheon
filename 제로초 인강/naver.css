@@ -9,15 +9,13 @@ body {
   padding: 0;
 }
 
-#fixed {
-  position: fixed;
-  top: 50px;
-  right: 50px;
-  display: inline-block;
-  width: 100px;
-  height: 100px;
-  border: 1px solid black;
-  border-radius: 50px;
+#header-top {
+  float: right;
+}
+#header-top span {
+  font-size: 11px;
+  color: #404040;
+  line-height: 16px;
 }
 
 .blind {
@@ -36,6 +34,7 @@ body {
 #header-search > a {
   text-decoration: none;
   vertical-align: middle;
+  clear: both;
 }
 
 div#header-search h1 {
