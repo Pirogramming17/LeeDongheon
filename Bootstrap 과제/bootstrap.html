@@ -1,3 +1,5 @@
+
+<!--다른 분의 코드를 한파트씩 따라 만든 내용입니다. 직접 만든 것이 아니니, 과제는 미제출로 해야할 것 같습니다.-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,13 +13,258 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
-    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
+    />
+   
+    <title>Bootstrap</title>
+<style>
+    .navbar {
+      background-color: rgb(45, 44, 44);
+    }
+    .navbar .navbar-nav .nav-item .color-change {
+      color: #7e8184;
+    }
+    .navbar .navbar-nav .nav-item .color-change:hover {
+      color: #aeafb0;
+    }
+    .container { 
+      margin-top: 407px;
+    }
+    #intro {
+      background-color: #5e6271;
+      height: 57rem;
+    }
+
+    #Highlights,#Gallery{
+      background-color: rgb(45, 44, 44);
+      
+    }
+    #Highlights i {
+         font-size: 150px;
+      }
+    #Highlights h3 {
+         font-size: 30px;
+      }
+    #staticBackdrop.modal-content{
+      background: rgb(45, 44, 44);
+    }
+
+    section {
+      height: 100%;
+    }
+    .container {
+      height: 100%;
+    }
+</style>
+
   </head>
   <body>
-    <!-- JavaScript Bundle with Popper -->
+    <header id="header" class="fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light ">
+      <div class="collapse" id="navbarToggleExternalContent">
+      </div>
+<nav class="navbar navbar-dark">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+        <a class="navbar-brand text-white" href="#">Pirograming</a>
+        <a class="nav-link text-info ms-1 me-1"  href="#"
+                >DongHeon Lee</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <button
+                class="navbar-toggler order-first"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapsibleNavbar"
+                >
+              </button>
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="#intro">Intro</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link color-change" href="#Highlights">Highlights</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link color-change" href="#Gallery">Gallery</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link color-change" href="#Contact">Contact</a>
+                </li>
+              </ul>
+              <button
+                type="button"
+                class="btn btn-outline-info ms-auto me-3"
+                data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop"
+              >
+                About
+              </button>
+        </div>
+      </div>
+    </nav>
+    </header>
+    <section id="piro">
+        <div
+          class="container d-flex flex-column justify-content-center align-items-center"
+        >
+          <h2>Pirogramming17</h2>
+          <p>Cheer up</p>
+          <div class="w-100 border-bottom border-dark border-2"></div>
+          <a class="mt-2 btn btn-primary" href="#intro" role="button"
+            >Get Started</a
+          >
+        </div>
+      </section>
+      <section id="intro">
+        <div
+          class="container d-flex flex-column justify-content-center align-items-center"
+        >
+          <h2 class="text-danger text-opacity-75">Built On the Bootstrap Grid</h2>
+          <p class="intro__text text-white text-center">
+            Bootsrap's responsive grid comes in 4 sizes or "breakpoints": tinyxs,
+            smallsm, mediummd, and largela. These 4 grid sizes enables you create
+            responsive layouts that behave accordingly on different sizes
+          </p>
+          <a class="mt-2 btn btn-light opacity-75" href="#Highlights" role="button"
+            >Learn more</a
+          >
+        </div>
+      </section>
+      <section id="Highlights" class="px-5 py-4 text-center d-flex flex-column align-items-center px-3">
+        <div class="row justify-content-center">
+          <div class="highlight__title pt-5">
+            <h2 class="text-primary text-center p-3">Flexible Layouts</h2>
+          </div>
+          
+            <div class="row pt-5 justify-content-center">
+              <div class="col-lg-4 text-center text-white">
+                <i class="fa-solid fa-display fa-7x"></i>
+                <h3 class="text-center m-1">Responsive</h3>
+                <p>Your site looks good everywhere</p>
+              </div>
+              <div class="col-lg-4 text-center text-white">
+                <i class="fa-brands fa-sass fa-7x"></i>
+                <h3 class="text-center m-1">Customizable</h3>
+                <p>Easy to theme and customize with SASS</p>
+              </div>
+              <div class="col-lg-4 text-center text-white">
+                <i class="fa-regular fa-star fa-7x"></i>
+                <h3 class="text-center m-1">consistent</h3>
+                <p>A mature, well-tested, stable codebase</p>
+              </div>
+  
+        
+      </section>
+      <section id="Gallery" class="px-5 py-4 text-center d-flex flex-column align-items-center px-3">
+        <div class="row d-flex align-items-center justify-content-around w-100 mb-5">
+           <div class="col-lg-4 col-md-6 col-sm-8 mb-5">
+              <img src="https://picsum.photos/seed/1/300/300" alt="">
+           </div>
+           <div class="col-lg-4 col-md-6 col-sm-8 mb-5">
+              <img src="https://picsum.photos/seed/2/300/300" alt="">
+           </div>
+           <div class="col-lg-4 col-md-6 col-sm-8 mb-5">
+              <img src="https://picsum.photos/seed/3/300/300" alt="">
+           </div>
+           <div class="col-lg-4 col-md-6 col-sm-8 mb-5">
+              <img src="https://picsum.photos/seed/4/300/300" alt="">
+           </div>
+           <div class="col-lg-4 col-md-6 col-sm-8 mb-5">
+              <img src="https://picsum.photos/seed/5/300/300" alt="">
+           </div>
+           <div class="col-lg-4 col-md-6 col-sm-8 mb-5">
+              <img src="https://picsum.photos/seed/6/300/300" alt="">
+           </div>
+        </div>
+     </div>
+    </section>
+    <section id="Contact" class="px-5 py-4 text-center d-flex flex-column align-items-center bg-secondary pt-5">
+      <h2 class="text-primary text-center w-100 border-bottom border-dark border-2 pb-3">Get in Touch</h2>
+      <form id="Contact" class="row bg-secondary d-flex align-items-center justify-content-center w-100 mt-5">
+         <div class="col-md-4 mb-4">
+            <input type="name" class="form-control" placeholder="Name">
+         </div>
+         <div class="col-md-4 mb-4 ">
+            <input type="email" class="form-control" placeholder="Email">
+         </div>
+         <div class="col-md-4 mb-4">
+            <input type="phone" class="form-control" placeholder="Phone">
+         </div>
+         <div class="col-md-12 mx-3 mb-4">
+            <textarea class="form-control" placeholder="Your message here..."></textarea>
+         </div>
+         <div class="col-3 mb-4">
+            <a href="#" class="btn btn-primary form-control" data-bs-toggle="modal" data-bs-target="#modal1">Send</a>
+         </div>
+      </form>
+    </section>
+    <footer class="px-5 py-4 bg-dark">
+      <div class="row justify-content-between">
+         <div class="col-lg-3 col-md-4 mb-4">
+            <h5 class="text-info">Information</h5>
+            <ul class="nav flex-column">
+               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Product</a></li>
+               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Services</a></li>
+               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Benefits</a></li>
+               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Developer</a></li>
+            </ul>
+         </div>
+         <div class="col-lg-3 col-md-4 mb-4">
+            <h5 class="text-info">About</h5>
+            <ul class="nav flex-column">
+               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Contact Us</a></li>
+               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Delivery Information</a></li>
+               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Privacy Policy</a></li>
+               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Terms & Conditions</a></li>
+            </ul>
+         </div>
+         <div class="col-lg-6 col-md-12 mb-4 ml-0">
+            <form>
+               <h5 class="text-info">Stay Posted</h5>
+               <div class="d-flex w-100 flex-column gap-2">
+                  <input id="newsletter1" type="text" class="form-control" placeholder="Tell us your email">
+                  <button class="btn btn-primary col-5" type="button" data-bs-toggle="modal"
+                     data-bs-target="#modal1">Subscribe for updates</button>
+               </div>
+            </form>
+         </div>
+      </div>
+      <div class="d-flex justify-content-between py-4 my-4 text-secondary">
+         <p>Bootstrap © 2022 Pirogramming17</p>
+      </div>
+   </footer>
+
+   
+      <div class="modal fade" id="staticBackdrop">
+        <div class="modal-dialog">
+           <div class="modal-content">
+              <div class="modal-header">
+                 <h5 class="modal-title mx-auto">피로그래밍 17기</h5>
+              </div>
+              <div class="modal-body text-center">
+                 <h3>파이팅!</h3>
+                 <p>모두들 아르샤 하시느라 수고 많으셨습니다!!<br>힘들더라도 끝나면 남는게 많을 겁니다<br>남은 세션들도 힘내서 열심히 해봐요!</p>
+              </div>
+              <div class="modal-footer">
+                 <a id="download" href="" class="text-primary">Download</a>
+                 <button type="button" class="btn btn-info" data-bs-dismiss="modal" aria-label="Close">OK</button>
+              </div>
+           </div>
+        </div>
+     </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/f578b19b63.js"
       crossorigin="anonymous"
     ></script>
   </body>
