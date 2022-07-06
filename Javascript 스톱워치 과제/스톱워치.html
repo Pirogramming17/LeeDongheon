@@ -4,77 +4,108 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pirogramming Stopwatch</title>
     <link rel="stylesheet" href="styles.css" />
-    <title>Piro Stop Watch</title>
   </head>
-  <body class="main-content">
-    <header id="title">
-      <h1>피로그래밍 스톱워치</h1>
-    </header>
-    <main>
-      <div id="watch">
-        <section class="time-background">
-          <div class="time-display">
-            <span id="postTestSec">00</span>
-            <span>:</span>
-            <span id="postTestMilisec">00</span>
-          </div>
-          <div class="stopwatch-btn">
-            <button type="button" id="testStartBtn">start</button>
-            <button type="button" id="testStopBtn">stop</button>
-            <button type="button" id="testResetBtn">reset</button>
-          </div>
-        </section>
-      </div>
-    </main>
-    <footer id="record">
-      <div class="record-title">
-        <button>전체선택</button>
-        <h1>구간기록</h1>
-        <button>삭제</button>
+  <body>
+    <h1>피로그래밍 스톱워치</h1>
+    <div>
+      <div>
+        <span id="postTestMin"></span
+        ><!-- 분 -->
+        <span id="postTestSec">00</span
+        ><!--초-->
+        <span>:</span>
+        <span id="postTestMilisec">00</span
+        ><!--밀리초-->
       </div>
       <div>
-        <ul id="testRecordList"></ul>
+        <button type="button" id="testStartBtn">START</button
+        ><!--시작/재시작 버튼-->
+        <button type="button" id="testStopBtn">STOP</button
+        ><!--정지 버튼-->
+        <button type="button" id="testResetBtn">RESET</button
+        ><!--기록 버튼-->
       </div>
-    </footer>
+      <div>
+        <button type="button" id="testDeleteallBtn">DELETEALL</button
+        ><!--기록 전체삭제 버튼-->
+      </div>
+      <div>
+        <span>구간기록</span>
+        <ul id="testRecordList"></ul>
+        <!--중간 기록할 리스트-->
+      </div>
+    </div>
 
-    <script type="text/javascript">
-        var stTime = 0;
-        var endTime = 0;
-        var timerStart;
+    <script>
+      var stTime = 0;
+      var endTime = 0;
+      var timerStart;
 
-        var sec
-        var milisec
+      var min;
+      var sec;
+      var milisec;
 
-        var startBtn = document.getElementById('testStartBtn');
-        var stopBtn = document.getElementById('testStopBtn');
+      var startBtn = document.getElementById("testStartBtn");
+      var stopBtn = document.getElementById("testStopBtn");
+      var resetBtn = document.getElementById("testResetBtn");
+      var recordList = document.getElementById("testRecordList");
+      var deleteallBtn = document.getElementById("testDeleteallBtn");
 
-        startBtn.addEventListener('click', function() {
-           if(!stTime); {
-              stTime = Date.now()
-           } else {
-              stTime += (Date.now() - endTime)
-           }
+      startBtn.addEventListener("click", function () {
+        if (!stTime) {
+          stTime = Date.now(); // 최초 START
+        } else {
+          stTime += Date.now() - endTime; // RESTART
+        }
 
-          timerStart = setInterval(function() {
-              var nowTime = new Date((Date.now() - stTime))
+        timerStart = setInterval(function () {
+          var nowTime = new Date(Date.now() - stTime);
 
-              sec = addZero(nowTime.getSeconds())
-              milisec = addZero(Math.floor(nowTime.getMilliseconds()/10))
+          sec = addZero(nowTime.getSeconds());
+          milisec = addZero(Math.floor(nowTime.getMilliseconds() / 10));
 
-              document.getElementById('postTestSec').innerText = sec
-              document.getElementById('postTestMilisec').innerText = milisec
-              }, 1)
-          });
-        stopBtn.addEventListener('click',function() {
-              if(timerStart) {
-                  clearInterval(timerStart)
-                  endTime = Date.now()
-              }
-          })
-      function addZero(num) {
-          return (num < 10 ? '0' + num : ''+num)
+          document.getElementById("postTestSec").innerText = sec;
+          document.getElementById("postTestMilisec").innerText = milisec;
+        }, 1);
+      });
+
+      stopBtn.addEventListener("click", function () {
+        if (timerStart) {
+          clearInterval(timerStart); // STOP
+          // 아래는 RECORD
+          console.log(min, sec, milisec);
+          var li = document.createElement("li");
+          li.style.color = "#000";
+          li.innerText = sec + " : " + milisec;
+          if (!recordList.firstChild) {
+            recordList.append(li);
+          } else {
+            recordList.insertBefore(li, recordList.firstChild);
           }
+          endTime = Date.now();
+        }
+      });
+      resetBtn.addEventListener("click", function () {
+        // RESET
+        stTime = 0;
+        min = 0;
+        sec = 0;
+        milisec = 0;
+        document.getElementById("postTestSec").innerText = "00";
+        document.getElementById("postTestMilisec").innerText = "00";
+        startBtn.innerText = "START";
+        timerStart = null;
+      });
+
+      deleteallBtn.addEventListener("click", function () {
+        recordList.innerHTML = "";
+      });
+
+      function addZero(num) {
+        return num < 10 ? "0" + num : "" + num;
+      }
     </script>
   </body>
 </html>
