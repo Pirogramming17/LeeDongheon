@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Piro Stop Watch</title>
+  </head>
+  <body class="main-content">
+    <header id="title">
+      <h1>피로그래밍 스톱워치</h1>
+    </header>
+    <main>
+      <div id="watch">
+        <section class="time-background">
+          <div class="time-display">
+            <span id="postTestSec">00</span>
+            <span>:</span>
+            <span id="postTestMilisec">00</span>
+          </div>
+          <div class="stopwatch-btn">
+            <button type="button" id="testStartBtn">start</button>
+            <button type="button" id="testStopBtn">stop</button>
+            <button type="button" id="testResetBtn">reset</button>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer id="record">
+      <div class="record-title">
+        <button>전체선택</button>
+        <h1>구간기록</h1>
+        <button>삭제</button>
+      </div>
+      <div>
+        <ul id="testRecordList"></ul>
+      </div>
+    </footer>
+
+    <script type="text/javascript">
+        var stTime = 0;
+        var endTime = 0;
+        var timerStart;
+
+        var sec
+        var milisec
+
+        var startBtn = document.getElementById('testStartBtn');
+        var stopBtn = document.getElementById('testStopBtn');
+
+        startBtn.addEventListener('click', function() {
+           if(!stTime); {
+              stTime = Date.now()
+           } else {
+              stTime += (Date.now() - endTime)
+           }
+
+          timerStart = setInterval(function() {
+              var nowTime = new Date((Date.now() - stTime))
+
+              sec = addZero(nowTime.getSeconds())
+              milisec = addZero(Math.floor(nowTime.getMilliseconds()/10))
+
+              document.getElementById('postTestSec').innerText = sec
+              document.getElementById('postTestMilisec').innerText = milisec
+              }, 1)
+          });
+        stopBtn.addEventListener('click',function() {
+              if(timerStart) {
+                  clearInterval(timerStart)
+                  endTime = Date.now()
+              }
+          })
+      function addZero(num) {
+          return (num < 10 ? '0' + num : ''+num)
+          }
+    </script>
+  </body>
+</html>
