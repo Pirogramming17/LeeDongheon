@@ -30,6 +30,7 @@
       <div>
         <button type="button" id="testDeleteallBtn">DELETEALL</button
         ><!--기록 전체삭제 버튼-->
+        <button type="button" id="testDeleteBtn">DELETE</button>
       </div>
       <div>
         <span>구간기록</span>
@@ -43,7 +44,6 @@
       var endTime = 0;
       var timerStart;
 
-      var min;
       var sec;
       var milisec;
 
@@ -52,6 +52,11 @@
       var resetBtn = document.getElementById("testResetBtn");
       var recordList = document.getElementById("testRecordList");
       var deleteallBtn = document.getElementById("testDeleteallBtn");
+      var deleteBtn = document.getElementById("testDeleteBtn");
+
+      let checkBox = document.createElement("input");
+      checkBox.setAttribute("type", "checkbox");
+      checkBox.setAttribute("class", "checkbox");
 
       startBtn.addEventListener("click", function () {
         if (!stTime) {
@@ -75,7 +80,7 @@
         if (timerStart) {
           clearInterval(timerStart); // STOP
           // 아래는 RECORD
-          console.log(min, sec, milisec);
+          console.log(sec, milisec);
           var li = document.createElement("li");
           li.style.color = "#000";
           li.innerText = sec + " : " + milisec;
@@ -84,13 +89,13 @@
           } else {
             recordList.insertBefore(li, recordList.firstChild);
           }
+          li.appendChild(checkBox);
           endTime = Date.now();
         }
       });
       resetBtn.addEventListener("click", function () {
         // RESET
         stTime = 0;
-        min = 0;
         sec = 0;
         milisec = 0;
         document.getElementById("postTestSec").innerText = "00";
@@ -100,6 +105,12 @@
       });
 
       deleteallBtn.addEventListener("click", function () {
+        // DELETEALL
+        recordList.innerHTML = "";
+      });
+
+      deleteBtn.addEventListener("click", function () {
+        // DELETE 선택삭제
         recordList.innerHTML = "";
       });
 
