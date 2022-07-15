@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>홈 화면</title>
+  </head>
+  <body>
+    {% for post in posts %}
+    <article>
+      <h1>{{post.title}}</h1>
+      <p>개봉년도 : {{post.year}}</p>
+      <p>감독 : {{post.director}} 주연 : {{post.actor}}</p>
+      <p>장르 : {{post.genre}}</p>
+      <p>별점 : {{post.grade}}</p>
+      <p>러닝타임 : {{post.run_time}}</p>
+      <p>{{post.content}}</p>
+    </article>
+    {% endfor %}
+
+    <a href="/create">리뷰작성</a>
+  </body>
+</html>

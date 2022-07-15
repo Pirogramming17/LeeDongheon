@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>게시글 올리기</title>
+  </head>
+  <body>
+    <form action="/update/{{post.id}}" method="post">
+      {% csrf_token %}
+      <h2>
+        <input
+          type="text"
+          name="title"
+          placeholder="제목"
+          value="{{post.title}}"
+        />
+      </h2>
+      <p>
+        <input
+          type="text"
+          name="year"
+          placeholder="개봉년도"
+          value="{{post.year}}"
+        />
+        <input
+          type="text"
+          name="director"
+          placeholder="감독"
+          value="{{post.director}}"
+        />
+        <input
+          type="text"
+          name="actor"
+          placeholder="주연"
+          value="{{post.actor}}"
+        />
+        <input
+          type="text"
+          name="genre"
+          placeholder="장르"
+          value="{{post.genre}}"
+        />
+        <input
+          type="number"
+          name="grade"
+          placeholder="별점"
+          value="{{post.grade}}"
+        />
+        <input
+          type="number"
+          name="run_time"
+          placeholder="러닝타임"
+          value="{{post.run_time}}"
+        />
+      </p>
+      <textarea name="content" id="" cols="30" rows="10">
+{{post.content}}</textarea
+      >
+
+      <div>
+        <input type="submit" value="저장" />
+      </div>
+    </form>
+    <a href="/">Home</a>
+  </body>
+</html>
