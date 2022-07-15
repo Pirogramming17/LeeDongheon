@@ -7,21 +7,21 @@
     <title>상세화면</title>
   </head>
   <body>
+    <h1><a href="/">my Movie reviews</a></h1>
     <article>
       <h2>제목 : {{ post.title }}</h2>
       <p>개봉년도 : {{post.year}}</p>
       <p>감독 : {{post.director}} 주연 : {{post.actor}}</p>
       <p>장르 : {{post.genre}}</p>
       <p>별점 : {{post.grade}}</p>
-      <p>러닝타임 : {{post.run_time}}</p>
+      <p>러닝타임 : {{post.run_time}} 분</p>
       <div>{{post.content}}</div>
     </article>
 
-    <div>업데이트 : <a href="{% url 'posts:update' post.id %}">Update</a></div>
+    <button><a href="{% url 'posts:update' post.id %}">수정</a></button>
     <form action="/delete/{{post.id}}" method="post">
       {% csrf_token %}
       <button>삭제</button>
     </form>
-    <div>홈 화면으로 가기: <a href="/">Home</a></div>
   </body>
 </html>

@@ -7,18 +7,16 @@
     <title>홈 화면</title>
   </head>
   <body>
+    <h1>my Movie reviews</h1>
     {% for post in posts %}
     <article>
-      <h1>{{post.title}}</h1>
+      <a href="{% url 'posts:detail' post.id %}">{{post.title}}</a>
       <p>개봉년도 : {{post.year}}</p>
-      <p>감독 : {{post.director}} 주연 : {{post.actor}}</p>
       <p>장르 : {{post.genre}}</p>
       <p>별점 : {{post.grade}}</p>
-      <p>러닝타임 : {{post.run_time}}</p>
-      <p>{{post.content}}</p>
     </article>
     {% endfor %}
 
-    <a href="/create">리뷰작성</a>
+    <button><a href="/create">리뷰작성</a></button>
   </body>
 </html>
