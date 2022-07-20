@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Idea Register</title>
+  </head>
+  <body>
+    <form action="/create" method="get">
+      <h2>
+        아이디어명:
+        <input type="text" name="idea_Title" />
+      </h2>
+      <p>아이디어 설명:</p>
+      <textarea name="idea_Content" id="" cols="30" rows="10"></textarea>
+      <p>
+        아이디어 관심도:
+        <input type="number" name="idea_Interest" />
+        예상 개발툴:
+        <input type="text" name="idea_Devtool" />
+      </p>
+      <div>
+        <input type="submit" value="submit" />
+      </div>
+    </form>
+    <a href="{% url 'posts:home' %}">목록</a>
+  </body>
+</html>

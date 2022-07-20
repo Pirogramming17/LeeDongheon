@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>게시글 올리기</title>
+  </head>
+  <body>
+    <form action="/update/{{post.id}}" method="post">
+      {% csrf_token %}
+      <h2>
+        <input type="text" name="idea_Title" value="{{post.idea_title}}" />
+      </h2>
+      <textarea name="idea_Content" id="" cols="30" rows="10">
+ {{post.idea_content}}</textarea
+      >
+      <p>
+        <input
+          type="number"
+          name="idea_Interest"
+          value="{{post.idea_Interest}}"
+        />
+        <input type="text" name="idea_Devtool" value="{{post.idea_Devtool}}" />
+      </p>
+
+      <div>
+        <input type="submit" value="제출" />
+      </div>
+    </form>
+    <a href="/">목록</a>
+  </body>
+</html>
