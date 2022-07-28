@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pirostagram</title>
+    <script
+      src="https://kit.fontawesome.com/b453b8b1fc.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    {% for post in posts %}
+    <div class="post-id-{{ post.id }}">
+      <div>{{ post.content }}</div>
+      <div
+        class="post__like"
+        onclick="onClickLike({{ post.id }}, 'like')"
+        style="cursor: pointer"
+      >
+        {% autoescape off %} {{ post.like }} {% endautoescape %}
+      </div>
+      <form action="{% url 'posts:delete' post.id %}" method="post">
+        {% csrf_token %}
+        <button>삭제</button>
+      </form>
+    </div>
+    {% endfor %}
+    <a href="./create">게시글 생성</a>
+    <script>
+      const requestLike = new XMLHttpRequest();
+      const onClickLike = (id) => {
+        const url = "/like_ajax/";
+        requestLike.open("POST", url, true);
+        requestLike.setRequestHeader(
+          "Content-Type",
+          "application/x-ww-form-urlencoded"
+        );
+        requestLike.send(JSON.stringify({ id: id }));
+      };
+
+      requestLike.onreadystatechange = () => {
+        if (requestLike.readyState === XMLHttpRequest.DONE) {
+          likeHandleResponse();
+        }
+      };
+
+      const likeHandleResponse = () => {
+        if (requestLike.status < 400) {
+          const { id, message, status } = JSON.parse(requestLike.response);
+          const element = document.querySelector(`.post-id-${id} .post__like`);
+          console.log(message);
+          console.log(status);
+          if (message == "좋아요")
+            element.innerHTML =
+              '<i class="fa-solid fa-heart" style="color:red"></i>';
+          else element.innerHTML = '<i class="fa-solid fa-heart"></i>';
+        }
+      };
+    </script>
+  </body>
+</html>
